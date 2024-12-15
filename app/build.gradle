@@ -1,12 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-//    alias(libs.plugins.org.jetbrains.kotlin.kapt)
+//    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
-//kapt {
-//    correctErrorTypes = true
-//}
+kapt {
+    correctErrorTypes = true
+}
 
 android {
     namespace 'builder.the.barry.bnbwc'
@@ -46,7 +47,7 @@ android {
 }
 
 dependencies {
-//    kapt libs.epoxy.processor
+    kapt libs.epoxy.processor
     implementation libs.epoxy
     implementation libs.epoxy.databinding
     implementation libs.ui.viewbinding

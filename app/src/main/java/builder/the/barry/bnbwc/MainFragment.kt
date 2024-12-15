@@ -46,6 +46,11 @@ class MainFragment : Fragment() {
             }
         }
 
+        return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             if (binding.bottomNavigation.selectedItemId != R.id.homeFragment) {
                 binding.bottomNavigation.selectedItemId = R.id.homeFragment
@@ -55,10 +60,7 @@ class MainFragment : Fragment() {
                 requireActivity().onBackPressed()
             }
         }
-
-        return binding.root
     }
-
 
 
 
