@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import builder.the.barry.bnbwc.databinding.FragmentMainBinding
@@ -39,6 +40,10 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        viewModel.selectedItem.observe(viewLifecycleOwner) { selectedItem ->
+//            val message = selectedItem?.line1 ?: "No item selected"
+//            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+//        }
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)

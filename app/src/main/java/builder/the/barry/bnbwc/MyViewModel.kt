@@ -1,5 +1,6 @@
 package builder.the.barry.bnbwc
 
+import android.util.Log
 import builder.the.barry.bnbwc.databinding.EpoxyViewHolderHeaderBinding
 
 // File: MyViewModel.kt
@@ -36,19 +37,34 @@ class MyViewModel : ViewModel() {
 
     // Update selected item
     private fun handleItemClick(clickedItem: MyModel) {
-        val updatedList = _items.value?.map {
-            if (it == clickedItem) it.copy(isSelected = !it.isSelected)
-            else it.copy(isSelected = false)
+        val updatedList = _items.value?.map { item ->
+            // Set all items' isSelected to false, except the clicked one
+            if (item == clickedItem) {
+                item.copy(isSelected = true) // Always set the clicked item as selected
+            } else {
+                item.copy(isSelected = false)
+            }
         } ?: return
 
         _items.value = updatedList
 
-        // Update the selected item
-        _selectedItem.value = if (clickedItem.isSelected) clickedItem else null
+        // Update the selected item explicitly
+        _selectedItem.value = clickedItem
     }
+
 
     // Method to get the title of the selected item
     fun getSelectedItemTitle(): String? {
         return _selectedItem.value?.line1
     }
+
+    fun onButtonClicked() {
+        selectedItem.value?.let {
+            Log.d("MyViewModel", "Button clicked with selected item: ${it.line1}")
+            // Handle the button click logic here
+        } ?: run {
+            Log.d("MyViewModel", "No item selected!")
+        }
+    }
+
 }

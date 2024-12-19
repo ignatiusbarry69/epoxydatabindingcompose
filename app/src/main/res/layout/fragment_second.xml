@@ -9,8 +9,6 @@
             type="builder.the.barry.bnbwc.MyViewModel" />
     </data>
 
-
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +18,8 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="56dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fluidRv"
@@ -28,7 +27,15 @@
             android:layout_height="wrap_content"
             app:recyclerAdapter="@{viewModel.adapter}"
             app:recyclerData="@{viewModel.items}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="56dp" />
 
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="btn"
+            android:onClick="@{() -> viewModel.onButtonClicked()}" />
     </FrameLayout>
 </layout>
