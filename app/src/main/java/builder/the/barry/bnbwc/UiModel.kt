@@ -1,5 +1,8 @@
 package builder.the.barry.bnbwc
 
+import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
+
 data class UiModel (
     val header: String,
     val content: User
@@ -23,4 +26,21 @@ fun getUiModel(): MutableList<UiModel>{
         UiModel("Second Class",User(9,"barry-i")),
         UiModel("Second Class",User(10,"barry-j")),
     )
+}
+
+
+data class MyModel(
+    val line1: String,
+    var isSelected: Boolean = false
+)
+
+// BindingAdapters.kt
+@BindingAdapter("app:recyclerAdapter", "app:recyclerData", requireAll = true)
+fun <T> bindRecyclerViewAdapterAndData(
+    recyclerView: RecyclerView,
+    adapter: FluidAdapter<T, *>,
+    data: List<T>?
+) {
+    recyclerView.adapter = adapter
+    data?.let { adapter.submitList(it) }
 }

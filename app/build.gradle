@@ -67,4 +67,7 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
+    implementation 'com.google.accompanist:accompanist-systemuicontroller:0.31.3-beta'
+    implementation 'app.rive:rive-android:5.0.1'
+    implementation "androidx.startup:startup-runtime:1.1.1"
 }
