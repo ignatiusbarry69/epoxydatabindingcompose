@@ -14,12 +14,12 @@
         android:layout_height="match_parent"
         tools:context=".SecondFragment">
 
-        <com.airbnb.epoxy.EpoxyRecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_marginBottom="56dp" />
+<!--        <com.airbnb.epoxy.EpoxyRecyclerView-->
+<!--            android:id="@+id/recyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            android:layout_marginBottom="56dp" />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fluidRv"
@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             app:recyclerAdapter="@{viewModel.adapter}"
             app:recyclerData="@{viewModel.items}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             android:layout_marginBottom="56dp" />
 
         <Button
@@ -36,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:text="btn"
-            android:onClick="@{() -> viewModel.onButtonClicked()}" />
+             />
+<!--        android:onClick="@{() -> viewModel.onButtonClicked()}"-->
     </FrameLayout>
 </layout>

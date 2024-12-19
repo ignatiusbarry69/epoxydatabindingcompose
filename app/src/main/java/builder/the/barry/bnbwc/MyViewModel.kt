@@ -7,6 +7,8 @@ import builder.the.barry.bnbwc.databinding.EpoxyViewHolderHeaderBinding
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import builder.the.barry.bnbwc.databinding.AnotherItemLayoutBinding
+
 // MyViewModel.kt
 class MyViewModel : ViewModel() {
 
@@ -17,8 +19,8 @@ class MyViewModel : ViewModel() {
     private val _selectedItem = MutableLiveData<MyModel?>()
     val selectedItem: LiveData<MyModel?> get() = _selectedItem
 
-    val adapter = FluidAdapter<MyModel, EpoxyViewHolderHeaderBinding>(
-        layoutResId = R.layout.epoxy_view_holder_header,
+    val adapter = FluidAdapter<MyModel, AnotherItemLayoutBinding>(
+        layoutResId = R.layout.another_item_layout,
         onBind = { binding, item ->
             binding.title = item.line1
             binding.isSelected = item.isSelected
@@ -31,7 +33,11 @@ class MyViewModel : ViewModel() {
         _items.value = listOf(
             MyModel("Title 1"),
             MyModel("Title 2"),
-            MyModel("Title 3")
+            MyModel("Title 3"),
+            MyModel("Title 4"),
+            MyModel("Title 5"),
+            MyModel("Title 6"),
+            MyModel("Title 7"),
         )
     }
 
