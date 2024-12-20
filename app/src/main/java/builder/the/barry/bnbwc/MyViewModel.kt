@@ -15,7 +15,6 @@ class MyViewModel : ViewModel() {
     private val _items = MutableLiveData<List<MyModel>>()
     val items: LiveData<List<MyModel>> get() = _items
 
-    // Track the selected item
     private val _selectedItem = MutableLiveData<MyModel?>()
     val selectedItem: LiveData<MyModel?> get() = _selectedItem
 
@@ -29,7 +28,6 @@ class MyViewModel : ViewModel() {
     )
 
     init {
-        // Sample data
         _items.value = listOf(
             MyModel("Title 1"),
             MyModel("Title 2"),
@@ -41,25 +39,20 @@ class MyViewModel : ViewModel() {
         )
     }
 
-    // Update selected item
     private fun handleItemClick(clickedItem: MyModel) {
         val updatedList = _items.value?.map { item ->
-            // Set all items' isSelected to false, except the clicked one
             if (item == clickedItem) {
-                item.copy(isSelected = true) // Always set the clicked item as selected
+                item.copy(isSelected = true)
             } else {
                 item.copy(isSelected = false)
             }
         } ?: return
 
         _items.value = updatedList
-
-        // Update the selected item explicitly
         _selectedItem.value = clickedItem
     }
 
 
-    // Method to get the title of the selected item
     fun getSelectedItemTitle(): String? {
         return _selectedItem.value?.line1
     }
@@ -67,7 +60,6 @@ class MyViewModel : ViewModel() {
     fun onButtonClicked() {
         selectedItem.value?.let {
             Log.d("MyViewModel", "Button clicked with selected item: ${it.line1}")
-            // Handle the button click logic here
         } ?: run {
             Log.d("MyViewModel", "No item selected!")
         }
