@@ -3,13 +3,11 @@ package builder.the.barry.bnbwc
 import android.util.Log
 import builder.the.barry.bnbwc.databinding.EpoxyViewHolderHeaderBinding
 
-// File: MyViewModel.kt
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import builder.the.barry.bnbwc.databinding.AnotherItemLayoutBinding
 
-// MyViewModel.kt
 class MyViewModel : ViewModel() {
 
     private val _items = MutableLiveData<List<MyModel>>()
