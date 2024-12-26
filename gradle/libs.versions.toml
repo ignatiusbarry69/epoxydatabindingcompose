@@ -19,6 +19,8 @@ navigationFragment = "2.8.5"
 ui = "1.5.3"
 uiAndroid = "1.7.6"
 uiViewbinding = "1.5.3"
+junitKtx = "1.2.1"
+fragmentTesting = "1.8.5"
 #kapt = "2.0.0"
 
 [libraries]
@@ -42,6 +44,8 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
 ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding", version.ref = "uiViewbinding" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
+androidx-fragment-testing = { group = "androidx.fragment", name = "fragment-testing", version.ref = "fragmentTesting" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
