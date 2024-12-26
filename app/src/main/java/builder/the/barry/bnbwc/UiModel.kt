@@ -31,6 +31,8 @@ fun getUiModel(): MutableList<UiModel>{
 
 data class MyModel(
     val line1: String,
+    val line2: String,
+    val line3: String,
     var isSelected: Boolean = false
 )
 

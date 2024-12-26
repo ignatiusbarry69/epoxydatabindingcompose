@@ -19,21 +19,19 @@ class MyViewModel : ViewModel() {
     val adapter = FluidAdapter<MyModel, AnotherItemLayoutBinding>(
         layoutResId = R.layout.another_item_layout,
         onBind = { binding, item ->
-            binding.title = item.line1
-            binding.isSelected = item.isSelected
+            binding.model = item
         },
         onClick = { item -> handleItemClick(item) }
     )
 
     init {
         _items.value = listOf(
-            MyModel("Title 1"),
-            MyModel("Title 2"),
-            MyModel("Title 3"),
-            MyModel("Title 4"),
-            MyModel("Title 5"),
-            MyModel("Title 6"),
-            MyModel("Title 7"),
+            MyModel("Rp 10.000", "+15 hari","+1 poin"),
+            MyModel("Rp 20.000", "+30 hari","+2 poin"),
+            MyModel("Rp 30.000", "+45 hari","+3 poin"),
+            MyModel("Rp 40.000", "+60 hari","+4 poin"),
+            MyModel("Rp 50.000", "+75 hari","+5 poin"),
+            MyModel("Rp 60.000", "+90 hari","+6 poin"),
         )
     }
 

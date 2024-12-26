@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorSelected">#F11010</color>
     <color name="colorUnselected">#00000000</color>
+    <color name="color2Selected">#fcf4f4</color>
+    <color name="color2Unselected">#FFFFFFFF</color>
 </resources>
